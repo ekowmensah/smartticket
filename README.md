@@ -14,7 +14,7 @@ This repository is currently at the Phase 1 foundation stage. The Laravel applic
 
 ## PHP Baseline
 
-Laravel 12 supports PHP 8.2, so the current local environment can be used for development work. The architecture specification still targets PHP 8.3 or newer, so the deployment baseline should be upgraded before production hardening.
+Laravel 12 supports PHP 8.2, and PHP 8.2 is the accepted local development baseline for this project. The architecture specification still targets PHP 8.3 or newer, so the deployment baseline can be upgraded later during production hardening without blocking Phase 1.
 
 ## Database Baseline
 
@@ -58,6 +58,8 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md), [DATABASE.md](./DATABASE.md), and [PHA
 7. Run `php artisan db:seed`.
 8. Run `php artisan test`.
 
+You can also use `composer setup` for the install, key generation, migration, seeding, and frontend build sequence.
+
 ## Planned Application Shape
 
 The target application is a modular monolith with domain boundaries inside `app/`, not a controller-heavy codebase. Planned top-level areas include:
@@ -84,7 +86,5 @@ The target application is a modular monolith with domain boundaries inside `app/
 
 ## Immediate Next Work
 
-- Reconcile the Phase 1 checklist against the implemented foundation and close any remaining gaps
-- Decide whether Phase 1 keeps database-backed queues/cache locally or introduces Redis immediately
-- Split shared authenticated UI into more explicit platform and organizer layout layers if we want stronger visual separation before Phase 2
-- Verify a clean-machine setup from scratch, including migrations, seeding, and test execution
+- Phase 1 is complete and verified against migrations, seeding, frontend build, and automated tests
+- Do not begin Phase 2 work until the Phase 2 scope is explicitly approved
